@@ -1,11 +1,37 @@
-let names = ["John", "Tom", "Jack", "Jim"]
-let numbers = [12, -45, 78, -23, 288, 103]
+const users =[
+  {
+    id: 1,
+    name: "Alex",
+    age: 25,
+    active:false
+  },
+  {
+    id: 2,
+    name: "Maria",
+    age: 17,
+    active:true
+}
+]
 
-names.filter((value) => {
-  if (value.includes("J") && value.length > 3){
-    console.log("Hi " + value)
+for (let user of users){
+  if (user.active == true){
+    console.log(user)
   }
-})
+}
 
-let func = numbers.filter((value) => value > 100 && value % 2 == 0)
-console.log(func)
+let usersName = []
+for (let user of users){
+    usersName.push(user.name)
+}
+console.log(usersName.join(', '))
+
+//решил не повторяться
+function filterUsers(users){
+  for(let user of users){
+    if(user.id == 1){
+      console.log(user)
+    }
+  }
+}
+
+filterUsers(users)
